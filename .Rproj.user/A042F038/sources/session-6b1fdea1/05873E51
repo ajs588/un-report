@@ -1,0 +1,29 @@
+{
+    "id": "05873E51",
+    "path": "~/Downloads/un-report/reports/gapminder_report.Rmd",
+    "project_path": "reports/gapminder_report.Rmd",
+    "type": "r_markdown",
+    "hash": "4250013907",
+    "contents": "",
+    "dirty": false,
+    "created": 1674070743545.0,
+    "source_on_save": false,
+    "relative_order": 7,
+    "properties": {
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "28,45",
+        "scrollLine": "27",
+        "working_dir": "project",
+        "last_setup_crc32": "6b1fdea1bb338d19"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1674072217,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1674072217128,
+    "read_only": false,
+    "read_only_alternatives": []
+}
