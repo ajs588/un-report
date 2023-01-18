@@ -1,0 +1,68 @@
+library(tidyverse)
+getwd()
+gapminder_data <- read_csv("data/gapminder_data.csv")
+view(gapminder_data)
+summarise(gapminder_data, averagelifeExp=mean(lifeExp), medianlifeExp=median(lifeExp))
+
+#learninig to pipe
+
+gapminder_summary<-gapminder_data%>%
+  summarise(averagelifeExp=mean(lifeExp))
+
+gapminder_summary
+
+#filtering
+gapminder_summary_2007<-gapminder_data%>%
+  filter(year==2007)%>%
+  summarise(average=mean(lifeExp))
+
+#filtering GDPPerCap
+
+gapminder_summary_1952<-gapminder_data%>%
+  filter(year==1952)%>%
+  summarise(average=mean(gdpPercap))
+
+#Using group_by()
+
+gapminder_data%>%
+  group_by(year, continent)%>%
+  summarise(average=mean(lifeExp), error=sd(lifeExp))
+
+#mutate function
+
+gapminder_data%>%
+  mutate(gdp=pop*gdpPercap)
+
+#mutate a new column which is pop in million
+gapminder_data%>%
+  mutate(pop=pop/1000000)
+
+#mutate a new column which is pop in million
+gapminder_data%>%
+  mutate(pop=pop*1000000)
+
+
+#mutate a new column which is pop in million
+gapminder_data%>%
+  mutate(popInmill=pop/1000000)
+
+#Select function
+gapminder_data%>%
+  select(pop, year)
+
+gapminder_data%>%
+  select(-continent)
+
+gapminder_data%>%
+  select(-continent,-pop)
+
+#Pivot_wider
+gapminder_data%>%
+  select(country, continent, year, lifeExp)%>%
+  pivot_wider(names_from=year, values_from = lifeExp)
+
+gapminder_data%>%
+  select(country, continent, year, lifeExp)%>%
+  pivot_wider(names_from=year, values_from = lifeExp)%>%
+  View()
+
